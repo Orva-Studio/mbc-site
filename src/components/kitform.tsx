@@ -34,7 +34,7 @@ const KitForm: React.FC = () => {
       if (response.ok) {
         setEmail("");
         // Show success message - you could replace this with a toast or modal
-        alert("Success! Now check your email to confirm your subscription.");
+        alert("Success! Now check your email to confirm your subscription. P.S. It might be in your spam folder.");
       } else {
         const errorText = await response.text();
         console.error("Form submission error:", errorText);
@@ -49,190 +49,76 @@ const KitForm: React.FC = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="seva-form formkit-form"
-      data-sv-form={FORM_ID}
-      data-uid="60a8355b5d"
-      data-format="inline"
-      data-version="5"
-      style={{
-        backgroundColor: "rgb(249, 250, 251)",
-        borderRadius: "4px",
-        border: "1px solid #e3e3e3",
-        maxWidth: "700px",
-        position: "relative",
-        overflow: "hidden",
-      }}
+    <section
+      id="kitform"
+      className="py-16 bg-primary-50 text-white p-4 rounded-2xl"
+      style={{ backgroundColor: 'var(--color-orange)' }}
     >
-      <div className="formkit-background" style={{ opacity: 0.2 }}></div>
-      <div data-style="minimal" style={{ padding: "20px", width: "100%", position: "relative" }}>
-        <div
-          className="formkit-header"
-          data-element="header"
-          style={{
-            color: "rgb(77, 77, 77)",
-            fontSize: "27px",
-            fontWeight: 700,
-            margin: "0 0 27px 0",
-            textAlign: "center",
-          }}
+      <div className="container mx-auto px-4 text-center">
+        <h2 
+          className="text-3xl font-bold font-sans text-primary-900 mb-6"
+          style={{ fontFamily: "'Fugaz One', cursive" }}
         >
-          <h2>Join the waiting list</h2>
-        </div>
+          Join and Get the First 2 Chapters
+        </h2>
+        <p className="text-lg text-primary-700 max-w-2xl mx-auto mb-8 font-sans">
+          Enter your email to get the first 2 chapters completely free.
+        </p>
         
-        <div
-          className="formkit-subheader"
-          data-element="subheader"
-          style={{
-            color: "rgb(104, 104, 104)",
-            fontSize: "18px",
-            margin: "18px 0",
-            textAlign: "center",
-          }}
-        >
-          <p>Subscribe to get our latest content by email.</p>
-        </div>
-
-        {errors.length > 0 && (
-          <ul
-            className="formkit-alert formkit-alert-error"
-            data-element="errors"
-            data-group="alert"
-            style={{
-              background: "#fde8e2",
-              borderColor: "#f2643b",
-              color: "#ea4110",
-              borderRadius: "5px",
-              listStyle: "none",
-              margin: "25px auto",
-              padding: "12px",
-              textAlign: "center",
-              width: "100%",
-            }}
-          >
-            {errors.map((error, index) => (
-              <li key={index}>{error}</li>
-            ))}
-          </ul>
-        )}
-
-        <div
-          data-element="fields"
-          data-stacked="false"
-          className="seva-fields formkit-fields"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            margin: "25px auto 0 auto",
-          }}
-        >
-          <div
-            className="formkit-field"
-            style={{
-              minWidth: "220px",
-              margin: "0 0 15px 0",
-              flex: "1 0 100%",
-            }}
-          >
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+          {errors.length > 0 && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+              {errors.map((error, index) => (
+                <p key={index}>{error}</p>
+              ))}
+            </div>
+          )}
+          
+          <div className="flex flex-col sm:flex-row gap-4">
             <input
-              className="formkit-input"
-              name="email_address"
-              aria-label="Email Address"
-              placeholder="Email Address"
-              required
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={{
-                color: "rgb(0, 0, 0)",
-                borderColor: "rgb(227, 227, 227)",
-                borderRadius: "4px",
-                fontWeight: 400,
-                background: "#ffffff",
-                fontSize: "15px",
-                padding: "12px",
-                border: "1px solid #e3e3e3",
-                width: "100%",
-                lineHeight: 1.4,
-                margin: 0,
-                transition: "border-color ease-out 300ms",
-              }}
+              placeholder="Your email address"
+              required
+              className="
+                flex-grow
+                px-4
+                py-3
+                rounded-md
+                border
+                border-primary-300
+                focus:outline-none
+                focus:ring-2
+                focus:ring-primary-500
+              "
             />
+            <button 
+              type="submit"
+              disabled={isSubmitting}
+              className="
+                bg-primary-700
+                hover:bg-primary-800
+                text-white
+                font-medium
+                py-3
+                px-6
+                rounded-md
+                shadow-md
+                transition-colors
+                disabled:opacity-50"
+              style={{ backgroundColor: 'var(--color-orange)' }}
+            >
+              {isSubmitting ? 'Submitting...' : 'Download'}
+            </button>
           </div>
           
-          <button
-            data-element="submit"
-            className="formkit-submit"
-            type="submit"
-            disabled={isSubmitting}
-            style={{
-              color: "rgb(255, 255, 255)",
-              backgroundColor: "rgb(22, 119, 190)",
-              borderRadius: "4px",
-              fontWeight: 400,
-              border: 0,
-              cursor: "pointer",
-              display: "inline-block",
-              textAlign: "center",
-              fontSize: "15px",
-              marginBottom: "15px",
-              overflow: "hidden",
-              padding: 0,
-              position: "relative",
-              verticalAlign: "middle",
-              margin: "0 0 15px 0",
-              flex: "1 0 100%",
-            }}
-          >
-            {isSubmitting && (
-              <div
-                className="formkit-spinner"
-                style={{
-                  display: "flex",
-                  height: "100%",
-                  width: "50px",
-                  margin: "0 auto",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  overflow: "hidden",
-                  textAlign: "center",
-                  transition: "all 300ms ease-in-out",
-                  opacity: 1,
-                }}
-              >
-              </div>
-            )}
-            <span
-              style={{
-                display: "block",
-                transition: "all 300ms ease-in-out",
-                padding: "12px 24px",
-                opacity: isSubmitting ? 0 : 1,
-              }}
-            >
-              Download
-            </span>
-          </button>
-        </div>
-
-        <div
-          className="formkit-guarantee"
-          data-element="guarantee"
-          style={{
-            color: "rgb(77, 77, 77)",
-            fontSize: "13px",
-            fontWeight: 400,
-            margin: "10px 0 15px 0",
-            textAlign: "center",
-          }}
-        >
-          <p>We won't send you spam. Unsubscribe at any time.</p>
-        </div>
+          <p className="text-sm text-primary-700 mt-4">
+            We won't send you spam. Unsubscribe at any time.
+          </p>
+        </form>
       </div>
-    </form>
+    </section>
   );
 };
 

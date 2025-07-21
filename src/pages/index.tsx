@@ -1,9 +1,9 @@
 import Blurb from "../components/blurb";
 import BookImage from "../components/bookimage";
 import Hero from "../components/hero";
-import Signup from "../components/signup";
 import About from "../components/about";
 import KitForm from "../components/kitform";
+import Faq from "../components/faq";
 
 
 export default async function HomePage() {
@@ -15,9 +15,9 @@ export default async function HomePage() {
       <Hero />
       <BookImage />
       <Blurb />
-      <Signup />
-      <KitForm />
       <About />
+      <KitForm />
+      <Faq />
     </div>
   );
 }

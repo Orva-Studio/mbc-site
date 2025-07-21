@@ -9,6 +9,7 @@ export default {
         'sans': ['Montserrat', 'var(--font-sans)', 'system-ui', 'sans-serif'],
         'serif': ['Montserrat', 'var(--font-sans)', 'system-ui', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],
+        'fugaz': ['"Fugaz One"', 'cursive'],
       },
       colors: {
         primary: {

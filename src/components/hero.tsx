@@ -2,7 +2,7 @@
 
 const Hero: React.FC = () => {
   const scrollToSignup = () => {
-    const signupElement = document.getElementById('signup');
+    const signupElement = document.getElementById('kitform');
     if (signupElement) {
       signupElement.scrollIntoView({ behavior: 'smooth' });
     }
@@ -11,8 +11,11 @@ const Hero: React.FC = () => {
   return (
     <section className="pt-20 pb-12">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold font-sans text-primary-900 mb-6">
-          Grow Your Developer Audience<br />With Video
+        <h1 
+          className="text-4xl md:text-7xl font-bold text-primary-900 mb-6 whitespace-pre-line" 
+          style={{ fontFamily: "'Fugaz One', cursive" }}
+        >
+          {"Grow Your Developer\nAudience With Video"}
         </h1>
         <p className="text-xl text-primary-600 max-w-3xl mx-auto mb-8 font-sans">
           Learn how to reach millions of developers with short form video content that engages and converts.

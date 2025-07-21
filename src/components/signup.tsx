@@ -16,7 +16,12 @@ const Signup: React.FC = () => {
   return (
     <section id="signup" className="py-16 bg-primary-50 text-white p-4 rounded-2xl" style={{backgroundColor: 'var(--color-orange)'}}>
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold font-sans text-primary-900 mb-6">Get the First 3 Chapters</h2>
+        <h2 
+          className="text-3xl font-bold font-sans text-primary-900 mb-6"
+          style={{ fontFamily: "'Fugaz One', cursive" }}
+        >
+          Get the First 3 Chapters
+        </h2>
         <p className="text-lg text-primary-700 max-w-2xl mx-auto mb-8 font-sans">
           Enter your email to get the first 3 chapters of "60 Seconds To Millions" completely free. 
         </p>

@@ -15,6 +15,7 @@
 ## Code Style
 - Use double quotes for strings, semicolons required
 - React components: PascalCase default exports, React.FC typing optional
+- Component declarations: Prefer top-level function declarations over function expressions
 - Imports: Named imports from relative paths, group by external/internal
 - Tailwind: Use utility classes, prefer responsive design patterns
 - Functions: async/await preferred, camelCase naming
