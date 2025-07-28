@@ -15,7 +15,7 @@ const Blurb: React.FC = () => {
           <p className="text-primary-700 mb-6 font-sans text-lg">
             I've been making technical short-form videos for over <strong>2 years</strong>, created <strong>300+ videos</strong> across two accounts, with several hitting <strong>a million views</strong> on Instagram. Am I the best creator out there? Far from it. But I know a few things about making short videos that developers actually want to watch, and I'm sharing <strong>everything I've learned—completely free</strong>.
           </p>
-          <h3 className="text-xl font-bold font-sans text-primary-800 mt-8 mb-4">What You'll Learn</h3>
+          <h3 className="text-xl font-bold font-sans text-primary-800 mt-8 mb-4" style={{'font-family':"'Fugaz One', aursive"}}>What You'll Learn</h3>
           <ul className="text-primary-700 mb-6 font-sans space-y-2">
             <li className="flex items-start">
               <span className="text-orange mr-2 mt-1">•</span>

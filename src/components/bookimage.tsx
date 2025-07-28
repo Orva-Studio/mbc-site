@@ -18,7 +18,7 @@ const BookImage: React.FC = () => {
           <div 
             className="
               w-64
-              h-[32rem]
+              h-[26rem]
               md:w-80
               md:h-[32rem]
               mx-auto

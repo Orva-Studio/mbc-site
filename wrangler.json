@@ -1,6 +1,6 @@
 
 {
-  "name": "waku-project",
+  "name": "makebettercontent",
   "main": "./dist/worker/serve-cloudflare.js",
   // https://developers.cloudflare.com/workers/platform/compatibility-dates
   "compatibility_date": "2024-11-11",
@@ -13,5 +13,11 @@
     "directory": "./dist/assets",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page",
-  }
+  },
+  "routes": [
+    {
+      "pattern": "makebettercontent.dev/*",
+      "zone_name": "makebettercontent.dev"
+    }
+  ],
 }

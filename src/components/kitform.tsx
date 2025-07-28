@@ -59,7 +59,7 @@ const KitForm: React.FC = () => {
           className="text-3xl font-bold font-sans text-primary-900 mb-6"
           style={{ fontFamily: "'Fugaz One', cursive" }}
         >
-          Join and Get the First 2 Chapters
+          Get the First 2 Chapters for FREE
         </h2>
         <p className="text-lg text-primary-700 max-w-2xl mx-auto mb-8 font-sans">
           Enter your email to get the first 2 chapters completely free.
@@ -106,8 +106,9 @@ const KitForm: React.FC = () => {
                 rounded-md
                 shadow-md
                 transition-colors
+                cursor-pointer
                 disabled:opacity-50"
-              style={{ backgroundColor: 'var(--color-orange)' }}
+              style={{ backgroundColor: 'var(--color-dark-blue)' }}
             >
               {isSubmitting ? 'Submitting...' : 'Download'}
             </button>
