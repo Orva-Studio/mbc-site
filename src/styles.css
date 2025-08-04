@@ -7,6 +7,10 @@
   --color-dark-blue: #2d3844;
 }
 
+.txt-orange {
+  color: var(--color-orange);
+ }
+
 body {
   background-color: var(--color-cream);
   color: var(--color-dark-blue);

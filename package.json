@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "waku dev",
-    "build": "waku build",
+    "build": "waku build && npm run build:worker",
+    "build:worker": "mkdir -p dist/worker && cp src/serve-cloudflare.js dist/worker/",
     "start": "waku start",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

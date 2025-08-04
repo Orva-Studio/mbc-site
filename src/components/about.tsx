@@ -12,7 +12,7 @@ function About() {
         
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
           <div className="flex-shrink-0">
-            <div className="w-48 h-48 rounded-full bg-primary-200 flex items-center justify-center overflow-hidden">
+            <div className="w-48 h-48 flex items-center justify-center overflow-hidden">
               <img
                 src="/images/richard-oliver-bray.jpg"
                 alt="Richard Oliver Bray"
