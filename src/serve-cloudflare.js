@@ -11,7 +11,7 @@ export default {
     
     try {
       // Import the Waku entries and setup
-      const { default: entries, loadModule, INTERNAL_setAllEnv, INTERNAL_setPlatformDataLoader, loadPlatformData } = await import('../entries.js');
+      const { default: entries, loadModule, I: INTERNAL_setAllEnv, a: INTERNAL_setPlatformDataLoader, loadPlatformData } = await import('../entries.js');
       
       // Set up the environment
       INTERNAL_setAllEnv(env);
@@ -19,9 +19,45 @@ export default {
       
       // Handle RSC (React Server Component) requests
       if (url.pathname.startsWith('/RSC/')) {
-        // This would handle React Server Component requests
-        // For now, return a basic response
-        return new Response('RSC endpoint not implemented', { status: 501 });
+        let rscPath = url.pathname.slice(5); // Remove '/RSC/' prefix
+        // Remove .txt extension if present
+        if (rscPath.endsWith('.txt')) {
+          rscPath = rscPath.slice(0, -4);
+        }
+        const rscParams = url.searchParams;
+        
+        try {
+          const response = await entries.handleRequest(
+            {
+              type: 'component',
+              rscPath,
+              rscParams,
+              req: { headers: Object.fromEntries(request.headers.entries()) }
+            },
+            {
+              renderRsc: async (entries) => {
+                // Import React server rendering utilities
+                const { renderToReadableStream } = await import('react-server-dom-webpack/server.edge');
+                const stream = renderToReadableStream(entries);
+                return new Response(stream, {
+                  headers: {
+                    'Content-Type': 'text/x-component',
+                    'Cache-Control': 'no-cache'
+                  }
+                });
+              },
+              renderHtml: async () => {
+                // HTML rendering not needed for RSC requests
+                return new Response('HTML rendering not supported for RSC', { status: 400 });
+              }
+            }
+          );
+          
+          return response || new Response('Not Found', { status: 404 });
+        } catch (error) {
+          console.error('RSC Error:', error);
+          return new Response('RSC Error: ' + error.message, { status: 500 });
+        }
       }
       
       // For all other requests, serve the main HTML

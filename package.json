@@ -5,17 +5,15 @@
   "private": true,
   "scripts": {
     "dev": "waku dev",
-    "build": "waku build && npm run build:worker",
-    "build:worker": "mkdir -p dist/worker && cp src/serve-cloudflare.js dist/worker/",
-    "start": "waku start",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "waku build --with-cloudflare ",
+    "start": "waku start"
   },
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-server-dom-webpack": "19.1.0",
-    "waku": "0.23.2"
+    "waku": "0.23.2",
+    "wrangler": "^4.27.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",

@@ -3,7 +3,7 @@
   "name": "makebettercontent",
   "main": "./dist/worker/serve-cloudflare.js",
   "compatibility_date": "2024-11-11",
-  "compatibility_flags": ["nodejs_als", "nodejs_compat"],
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist/assets",
