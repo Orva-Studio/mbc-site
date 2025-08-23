@@ -1,5 +1,4 @@
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 
@@ -10,7 +9,6 @@ interface MDXRendererProps {
 export function MDXRenderer({ content }: MDXRendererProps) {
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeHighlight, rehypeRaw]}
       components={{
         h1: ({ children }) => (
