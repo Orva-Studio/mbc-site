@@ -9,9 +9,15 @@
     "start": "waku start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "gray-matter": "^4.0.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
     "react-server-dom-webpack": "19.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-raw": "^7.0.0",
     "waku": "0.23.2",
     "wrangler": "^4.27.0"
   },
