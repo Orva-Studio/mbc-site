@@ -23,10 +23,6 @@ export default async function BlogPage() {
           </div>
         )}
       </div>
-      
-      <Link to="/" className="mt-8 inline-block text-primary-600 hover:text-primary-800 transition-colors underline">
-        ← Back to home
-      </Link>
     </div>
   );
 }
@@ -43,17 +39,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
           {post.title}
         </Link>
       </h2>
-      
       <p className="text-primary-600 mb-4">{post.description}</p>
-      
-      <div className="flex justify-end">
-        <Link 
-          to={`/blog/${post.slug}`} 
-          className="text-primary-600 hover:text-primary-800 transition-colors font-medium"
-        >
-          Read more →
-        </Link>
-      </div>
     </article>
   );
 }
@@ -62,7 +48,7 @@ const getData = async () => {
   const data = {
     title: 'Blog - Make Better Content',
     headline: 'Blog',
-    description: 'Tips, insights, and strategies for growing your developer audience with video content.',
+    description: 'Tips, insights, and strategies for growing your developer audience with.',
   };
 
   return data;

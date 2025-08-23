@@ -1,10 +1,8 @@
 import { Link } from 'waku';
-import { getPostBySlug, formatDate, getAllPosts, type BlogPost } from '../../lib/blog';
+import { getPostBySlug, formatDate, getAllPosts} from '../../lib/blog';
 import { MDXRenderer } from '../../components/mdx-renderer';
 
 export default async function BlogPostPage({ slug }: { slug: string }) {
-  console.log('BlogPostPage received slug:', slug, typeof slug);
-  
   // Ensure slug is a string
   const postSlug = String(slug || '');
   const post = await getPostBySlug(postSlug);

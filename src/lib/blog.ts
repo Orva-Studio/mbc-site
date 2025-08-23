@@ -1,5 +1,5 @@
-import { readdir, readFile } from 'fs/promises';
-import { join } from 'path';
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import matter from 'gray-matter';
 
 export interface BlogPost {
@@ -41,7 +41,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
     // Sort posts by date (newest first)
     return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } catch (error) {
-    console.error('Error reading blog posts:', error);
+    console.error('Error reading blog posts:', error as Error);
     return [];
   }
 }
@@ -81,7 +81,7 @@ export function formatDate(dateString: string): string {
       month: 'long',
       day: 'numeric',
     });
-  } catch (error) {
+  } catch (_error) {
     return dateString;
   }
 }
