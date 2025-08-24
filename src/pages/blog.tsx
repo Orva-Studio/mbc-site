@@ -6,7 +6,7 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container px-4 py-8">
       <title>{data.title}</title>
       <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900">{data.headline}</h1>
       <p className="text-lg text-primary-600 mb-8">{data.description}</p>
@@ -48,7 +48,7 @@ const getData = async () => {
   const data = {
     title: 'Blog - Make Better Content',
     headline: 'Blog',
-    description: 'Tips, insights, and strategies for growing your developer audience with.',
+    description: 'Tips, insights, and strategies for growing your developer audience',
   };
 
   return data;
