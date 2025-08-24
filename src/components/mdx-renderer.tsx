@@ -7,31 +7,10 @@ interface MDXRendererProps {
 }
 
 export function MDXRenderer({ content }: MDXRendererProps) {
-	console.log(content);
   return (
     <ReactMarkdown
       rehypePlugins={[rehypeHighlight, rehypeRaw]}
       components={{
-        h1: ({ children }) => (
-          <h1 className="text-3xl font-bold text-primary-900 mb-6 mt-8 first:mt-0">
-            {children}
-          </h1>
-        ),
-        h2: ({ children }) => (
-          <h2 className="text-2xl font-bold text-primary-900 mb-4 mt-8">
-            {children}
-          </h2>
-        ),
-        h3: ({ children }) => (
-          <h3 className="text-xl font-bold text-primary-900 mb-3 mt-6">
-            {children}
-          </h3>
-        ),
-        h4: ({ children }) => (
-          <h4 className="text-lg font-bold text-primary-900 mb-3 mt-4">
-            {children}
-          </h4>
-        ),
         p: ({ children }) => (
           <p className="text-primary-700 mb-4 leading-relaxed">
             {children}

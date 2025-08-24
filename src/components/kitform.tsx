@@ -59,7 +59,7 @@ const KitForm: React.FC = () => {
           className="text-3xl font-bold font-sans text-primary-900 mb-6"
           style={{ fontFamily: "'Fugaz One', cursive" }}
         >
-          I'm Still Working On This But...
+          I'm Still Working On The Book But...
         </h2>
         <p className="text-lg text-primary-700 max-w-2xl mx-auto mb-8 font-sans">
           Enter your email to get the first 2 chapters for FREE. I'll also send you a copy of the book when it's ready.

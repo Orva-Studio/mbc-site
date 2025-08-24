@@ -1,26 +1,22 @@
 
-import { Link } from 'waku';
-
-export default async function AboutPage() {
+export default async function ContactPage() {
   const data = await getData();
 
   return (
-    <div>
+    <div className="container mx-auto px-4 py-8">
       <title>{data.title}</title>
-      <h1 className="text-4xl font-bold tracking-tight">{data.headline}</h1>
-      <p>{data.body}</p>
-      <Link to="/" className="mt-4 inline-block underline">
-        Return home
-      </Link>
+      <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900">{data.headline}</h1>
+      <p className="text-primary-600 mb-8">If you're looking for any kind of help with growing your audience through video, don't hesitate to reach out.</p>
+      <p className="text-primary-600 mb-8">hello@makebettercontext.dev</p>
     </div>
   );
 }
 
 const getData = async () => {
   const data = {
-    title: 'About',
-    headline: 'About Waku',
-    body: 'The minimal React framework',
+    title: 'Contact - Make Better Content',
+    headline: 'Contact',
+    description: 'The minimal React framework',
   };
 
   return data;
