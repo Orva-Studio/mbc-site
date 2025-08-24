@@ -7,6 +7,7 @@ interface MDXRendererProps {
 }
 
 export function MDXRenderer({ content }: MDXRendererProps) {
+	console.log(content);
   return (
     <ReactMarkdown
       rehypePlugins={[rehypeHighlight, rehypeRaw]}
