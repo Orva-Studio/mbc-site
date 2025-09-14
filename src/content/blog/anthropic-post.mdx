@@ -5,7 +5,7 @@ date: "2025-09-14"
 author: "Richard Oliver Bray"
 ---
 
-<img src="/images/blog/allegance.png" alt="Book cover" className="w-full mb-8" />
+![Female US soldier saluting](/images/blog/allegance.png)
 
 There's no doubt about it; when it comes to AI coding, **Anthropic models have always been ahead**. 
 
@@ -17,7 +17,7 @@ Before continuing, I want to get one thing off my chest. I predominantly use Son
 
 ## Claude is no longer far ahead
 
-Despite what you think about benchmark scores for AI models, they're the best way at a glance to judge a model's performance. Without, of course, trying the model yourself. I don't want to go into detail on all the coding benchmarks, but I personally think **SWE-bench** and **LiveCodeBench** are very good at telling if a model is good at real-world coding tasks. So if we take a look at scores for SWE-bench, remember that higher is better.
+Despite what you think about benchmark scores for AI models, they're the best way at a glance to judge a model's performance. Without, of course, trying the model yourself. I don't want to go into detail on all the coding benchmarks, but I personally think **SWE-bench** and **LiveCodeBench** are very good at telling if a model is good at real-world coding tasks. So if we take a look at scores for [SWE-bench](https://www.swebench.com/), remember that higher is better.
 
 | Model     | Score  |
 |-----------|--------|
@@ -30,4 +30,35 @@ Despite what you think about benchmark scores for AI models, they're the best wa
 
 Note: These scores are from SWE-bench verified using the [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent).
 
-Also, (yes, this is still part of the note), GLM 4.5 claims to have a score of 64.2 using the [OpenHands agent](https://github.com/All-Hands-AI/OpenHands), which is better than the mini-SWE agent in my opinion. Kimi-K2 0711 gets a score of 43.80, but the newer one claims to have a score of 69.2. I believe that number is inflated since it's not from the SWE-Bench leaderboard site, but I'll let you make your own judgement.
+Also, (yes, this is still part of the note), GLM 4.5 claims to have a score of 64.2 using the [OpenHands agent](https://github.com/All-Hands-AI/OpenHands), which is better than the mini-SWE agent in my opinion. Kimi-K2 0711 gets a score of 43.80, but the newer one claims to have a score of 69.2. 
+
+[![Bar chart of new Kimi-K2 benchmarks compared to the old one](https://preview.redd.it/kimi-k2-instruct-0905-released-v0-u97uhts0q9nf1.png?width=1200&auto=webp&s=72e0991ca8dcff3360c293d933755bf72d14e762)](https://www.reddit.com/media?url=https://preview.redd.it/kimi-k2-instruct-0905-released-v0-u97uhts0q9nf1.png?width%3D1200%26auto%3Dwebp%26s%3D72e0991ca8dcff3360c293d933755bf72d14e762)
+
+I believe that number is inflated since it's not from the SWE-Bench leaderboard site, but I'll let you make your own judgement.
+
+Anyway...Back to the SWE-Bench scores from the table above. Although Opus tops the charts, GPT-5 is not far behind, and it's also much cheaper, but we'll get to that later. For now, let's take a look at the LiveCodeBench scores.
+
+[![LiveCodeBench scores top 17 models](/images/blog/live_code_bench.png)](https://www.vals.ai/benchmarks/lcb-08-27-2025)
+
+Claude Opus sits at 14 lower than GPT-5 (8), Kimi K2 (12) and GPT-5 Mini (1). I understand benchmarks don't tell the full story of a model's performance, and I'm sure there are specific things Claude models have done that outperform all the other models, but in my experience of using Kimi, GLM and GPT-5, Claude is not that far ahead in terms of programming.
+
+You may disagree, and you're completely entitled to, but you won't be able to disagree on the next point.
+
+## Claude is expensive 
+
+In the grand scheme of things, Claude is not expensive. I mean, the fact that you can vibe code a portfolio website cheaper than buying a cup of coffee is amazing. However, when compared to other state-of-the-art models, Claude's pricing is very expensive.
+
+Here is a table I've put together from open router data so it's per million input and output tokens.
+
+
+| Model          | Input ($) | Output ($)  |
+|----------------|-------|---------|
+| Claude Opus 4.1       | 15    | 75      |
+| Claude Sonnet 4       | 3     | 15      |
+| GPT-5          | 1.25  | 10      |
+| GLM 4.5        | 0.33  | 1.32    |
+| Kimi K2 0905   | 0.29  | 1.185   |
+
+Yes, Claude Opus is significantly more expensive than the others, but so is Sonnet. It's more than twice the price of GPT-5 for input tokens. What's amazing is that the open-source Chinese models are super reasonable when it comes to price, considering GLM 4.5 in particular is a fantastic model. I've spent a lot of time with Kimi K2 0711, which is also great, but not much with 0905. 
+
+So we've established that Claude models aren't way ahead of the competition but are much more expensive. However, I know many of you use the Claude Pro plan, which is $20 a month or $17/m if billed annually, which allows a max of 40 prompts every 5 hours, which is good. But if you compare that to the GLM coding plan, which is currently $3 for 120 prompts every 5 hours, Claude seems very expensive. Many believe the subscription model for LLMs can't be sustainable since someone can use 100 dollars of prompts on their 20-dollar plan, but that may be one of the reasons. Anthropic introduced weekly rate limits. 
