@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 
 interface MDXRendererProps {
   content: string;
@@ -10,6 +11,7 @@ export function MDXRenderer({ content }: MDXRendererProps) {
   return (
     <ReactMarkdown
       rehypePlugins={[rehypeHighlight, rehypeRaw]}
+      remarkPlugins={[remarkGfm]}
       components={{
         p: ({ children }) => (
           <p className="text-primary-700 mb-4 leading-relaxed">
@@ -73,6 +75,38 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         ),
         hr: () => (
           <hr className="border-primary-200 my-8" />
+        ),
+        h2: ({ children }) => (
+          <h2 className="text-2xl mt-12 mb-4">
+            {children}
+          </h2>
+        ),
+        table: ({ children }) => (
+          <div className="w-full overflow-x-auto mb-4">
+            <table className="w-full border-collapse border border-gray-300">
+              {children}
+            </table>
+          </div>
+        ),
+        th: ({ children }) => (
+          <th className="border border-gray-300 bg-gray-100 px-4 py-2 text-left font-semibold">
+            {children}
+          </th>
+        ),
+        td: ({ children }) => (
+          <td className="border border-gray-300 px-4 py-2">
+            {children}
+          </td>
+        ),
+        thead: ({ children }) => (
+          <thead>
+            {children}
+          </thead>
+        ),
+        tbody: ({ children }) => (
+          <tbody>
+            {children}
+          </tbody>
         ),
       }}
     >
