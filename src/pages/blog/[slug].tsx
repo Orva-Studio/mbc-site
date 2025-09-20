@@ -25,7 +25,7 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
     <div className="container mx-auto px-4 py-8">
       <title>{`${post.title} - Make Better Content`}</title>
       
-      <article className="my-8 max-w-3xl mx-auto">
+      <article className="my-8 max-w-2xl mx-auto">
         <header className="mb-8">
           <Link to="/blog" className="text-primary-600 hover:text-primary-800 transition-colors underline mb-4 inline-block">
             ← Back to blog

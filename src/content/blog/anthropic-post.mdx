@@ -1,7 +1,7 @@
 ---
 title: "I pledge allegiance to Anthropic no more"
-description: "Why I think it's time everyone should stop using Anthropic models"
-date: "2025-09-14"
+description: "It's time everyone stopped exclusively using Anthropic models"
+date: "2025-09-21"
 author: "Richard Oliver Bray"
 ---
 
@@ -28,7 +28,7 @@ Despite what you think about benchmark scores for AI models, they're the best wa
 | o3        | 58.40  |
 | Qwen3     | 55.40  |
 
-Note: These scores are from SWE-bench verified using the [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent).
+**Note:** These scores are from SWE-bench verified using the [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent).
 
 Also, (yes, this is still part of the note), GLM 4.5 claims to have a score of 64.2 using the [OpenHands agent](https://github.com/All-Hands-AI/OpenHands), which is better than the mini-SWE agent in my opinion. Kimi-K2 0711 gets a score of 43.80, but the newer one claims to have a score of 69.2. 
 
@@ -36,34 +36,44 @@ Also, (yes, this is still part of the note), GLM 4.5 claims to have a score of 6
 
 I believe that number is inflated since it's not from the SWE-Bench leaderboard site, but I'll let you make your own judgement.
 
-Anyway...Back to the SWE-Bench scores from the table above. Although Opus tops the charts, GPT-5 is not far behind, and it's also much cheaper, but we'll get to that later. For now, let's take a look at the LiveCodeBench scores.
+Anyway...Back to the SWE-Bench scores from the table above. Although Opus tops the charts, GPT-5 is not far behind, and it's also much cheaper. But we'll get to that later, for now, let's take a look at the LiveCodeBench scores.
 
 [![LiveCodeBench scores top 17 models](/images/blog/live_code_bench.png)](https://www.vals.ai/benchmarks/lcb-08-27-2025)
 
-Claude Opus sits at 14 lower than GPT-5 (8), Kimi K2 (12) and GPT-5 Mini (1). I understand benchmarks don't tell the full story of a model's performance, and I'm sure there are specific things Claude models have done that outperform all the other models, but in my experience of using Kimi, GLM and GPT-5, Claude is not that far ahead in terms of programming.
+Claude Opus sits at 14, lower than GPT-5 (8), Kimi K2 (12) and GPT-5 Mini (1). I understand benchmarks don't tell the full story of a model's performance, and I'm sure there ways Claude outperform other models, but in my experience using Kimi, GLM and GPT-5, Claude is not that far ahead in terms of programming.
 
 You may disagree, and you're completely entitled to, but you won't be able to disagree on the next point.
 
 ## Claude is expensive 
 
-In the grand scheme of things, Claude is not expensive. I mean, the fact that you can vibe code a portfolio website cheaper than buying a cup of coffee is amazing. However, when compared to other state-of-the-art models, Claude's pricing is very expensive.
+In the grand scheme of things, Claude is not _expensive_. I mean, the fact that you can vibe code a portfolio website cheaper than buying a cup of coffee is amazing. However, when compared to other state-of-the-art models, Claude's pricing is very expensive.
 
-Here is a table I've put together from open router data so it's per million input and output tokens.
+Here is a table I've put together from [OpenRouter](https://openrouter.ai/) data so it's per million input and output tokens.
 
 
-| Model          | Input ($) | Output ($)  |
-|----------------|-------|---------|
-| Claude Opus 4.1       | 15    | 75      |
-| Claude Sonnet 4       | 3     | 15      |
-| GPT-5          | 1.25  | 10      |
-| GLM 4.5        | 0.33  | 1.32    |
-| Kimi K2 0905   | 0.29  | 1.185   |
+| Model              | Input ($) | Output ($) |
+|--------------------|-----------|------------|
+| Claude Opus 4.1    | 15.00     | 75.00      |
+| Claude Sonnet 4    | 3.00      | 15.00      |
+| GPT-5              | 1.25      | 10.00      |
+| GLM 4.5            | 0.33      | 1.32       |
+| Kimi K2 0905       | 0.29      | 1.19       |
 
-Yes, Claude Opus is significantly more expensive than the others, but so is Sonnet. It's more than twice the price of GPT-5 for input tokens. What's amazing is that the open-source Chinese models are super reasonable when it comes to price, considering GLM 4.5 in particular is a fantastic model. I've spent a lot of time with Kimi K2 0711, which is also great, but not much with 0905. 
+Yes, Claude Opus is **significantly more expensive** than the others, but so is Sonnet. It's more than **twice the price** of GPT-5 for input tokens. What's amazing is that the open-source Chinese models are super reasonable, considering GLM 4.5 in particular is a fantastic model. I've spent a lot of time with Kimi-K2 0711, which is also brilliant, but not much with 0905. 
 
-So we've established that Claude models aren't way ahead of the competition, but are much more expensive. However, I know many of you use the Claude Pro plan, which is $20 a month or $17/m if billed annually, which allows a max of 40 prompts every 5 hours, which is good. But if you compare that to the GLM coding plan, which is currently $3 for 120 prompts every 5 hours, Claude seems very expensive. Many believe the subscription model for LLMs can't be sustainable since someone can use 100 dollars of prompts on their 20-dollar plan, but that may be one of the reasons. Anthropic introduced weekly rate limits. 
+So we've established that Claude models aren't way ahead of the competition, but are much more expensive. However, I know many of you use the Claude Pro plan, which, last I checked is **$20 a month** or **$17/m** if billed annually. This allows a maximum of 40 prompts every 5 hours, which is good. But if you compare that to the [GLM coding plan](https://z.ai/subscribe), at **$3 a month** for 120 prompts every 5 hours, Claude seems very expensive. 
+
+**Note**: The GLM coding plan is $3 a month for the first month then $6 a month thereafter. The yearly plan is the best value at $36 for the first year.
+
+Many believe the subscription model for LLMs can't be sustainable since someone can use 100 dollars of prompts on their 20-dollar a month plan, which may be one of the reasons Anthropic introduced [weekly rate limits](https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/). But I'm fairly confident OpenAI can maintain that price because of their huge user base that can offset some of the cost, right?
 
 ## Conclusion
 
+Don't get me wrong, I think Claude Code is great. I love all the explainer videos Anthropic have on YouTube, and I think the team are very vocal on Twitter/X. I just think Claude is no longer the 'top dog' when it comes to coding. There are other models that are as good as, or even better than it for specific things, i.e. GPT-5 for design.
 
-Don't get me wrong, I think Claude Code is great. I love all the explainer videos Anthropic have on YouTube, and I think the team are very vocal on Twitter, which I like. I just think Claude is no longer the 'top dog' when it comes to coding. There are other models that are as good as, or even better than it for specific things, i.e. GPT-5 for design. And it's expensive. 
+So what should Anthropic do? I don't know. With their [recent funding](https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation), they could make their models cheaper or focus on a more efficient model design to make it cheaper. Or they could keep the price as is, but offer more 'premium' quality models with features that a developer would want. Basically, Sonnet 4.5 can't be a slightly better version of 4; it needs to be something groundbreaking, and I'm not sure what that is.
+
+Nevertheless, if you are a die-hard Anthropic fan, I think it's time to try out different models. You'll be surprised at how good they are, and you'll also save a lot of money in the process.
+
+Happy coding 👋
+
