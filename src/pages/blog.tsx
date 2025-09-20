@@ -6,12 +6,14 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
-    <div className="container px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
       <title>{data.title}</title>
-      <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900">{data.headline}</h1>
-      <p className="text-lg text-primary-600 mb-8">{data.description}</p>
-      
-      <div className="space-y-6">
+
+      <article className="my-8 max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900">{data.headline}</h1>
+        <p className="text-lg text-primary-600 mb-8">{data.description}</p>
+
+        <div className="space-y-6">
         {posts.length > 0 ? (
           posts.map((post) => (
             <BlogPostCard key={post.slug} post={post} />
@@ -22,7 +24,8 @@ export default async function BlogPage() {
             <p className="text-primary-400 mt-2">Check back later for content creation tips and insights.</p>
           </div>
         )}
-      </div>
+        </div>
+      </article>
     </div>
   );
 }

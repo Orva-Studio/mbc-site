@@ -10,6 +10,9 @@ const Navbar: React.FC = () => {
           </div>
         </Link>
         <div className="flex space-x-6">
+          <Link to="/book" className="text-primary-600 hover:text-primary-800 transition-colors font-sans">
+            Book
+          </Link>
           <Link to="/blog" className="text-primary-600 hover:text-primary-800 transition-colors font-sans">
             Blog
           </Link>

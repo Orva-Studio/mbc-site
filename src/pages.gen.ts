@@ -10,6 +10,8 @@ import type { getConfig as File_BlogSlug_getConfig } from './pages/blog/[slug]';
 // prettier-ignore
 import type { getConfig as File_Blog_getConfig } from './pages/blog';
 // prettier-ignore
+import type { getConfig as File_Book_getConfig } from './pages/book';
+// prettier-ignore
 import type { getConfig as File_Contact_getConfig } from './pages/contact';
 
 // prettier-ignore
@@ -17,6 +19,7 @@ type Page =
 | ({ path: '/_root' } & GetConfigResponse<typeof File_Root_getConfig>)
 | ({ path: '/blog/[slug]' } & GetConfigResponse<typeof File_BlogSlug_getConfig>)
 | ({ path: '/blog' } & GetConfigResponse<typeof File_Blog_getConfig>)
+| ({ path: '/book' } & GetConfigResponse<typeof File_Book_getConfig>)
 | ({ path: '/contact' } & GetConfigResponse<typeof File_Contact_getConfig>)
 | { path: '/'; render: 'dynamic' };
 
