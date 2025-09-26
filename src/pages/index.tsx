@@ -28,7 +28,7 @@ export default async function HomePage() {
             src="/images/profile_pic.png"
             alt="Richard Oliver Bray"
             width="768"
-            className="w-full max-w-lg mx-auto md:mx-0 max-h-[400px] object-contain rounded-full"
+            className="max-w-lg mx-auto md:mx-0 max-h-[400px] rounded-full w-auto"
             height="443"
           />
         </article>
