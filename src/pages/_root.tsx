@@ -33,6 +33,12 @@ export default async function RootElement({ children }: { children: React.ReactN
           src='https://static.cloudflareinsights.com/beacon.min.js' 
           data-cf-beacon='{"token": "8c41872b55bd42259fc884555a56acd7"}'>
         </script>
+        <script
+            id="counterscale-script"
+            data-site-id="mbc-site"
+            src="https://counterscale.richardbray89.workers.dev/tracker.js"
+            defer>
+        </script>
       </body>
     </html>
   );
