@@ -74,3 +74,9 @@ function BlogPostCard({ post }: { post: BlogPost }) {
     </article>
   );
 }
+
+export const getConfig = async () => {
+  return {
+    render: 'static',
+  } as const;
+};

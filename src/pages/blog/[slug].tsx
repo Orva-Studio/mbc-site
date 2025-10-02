@@ -1,4 +1,4 @@
-import { Link } from 'waku';
+
 import { getPostBySlug, formatDate, getAllPosts} from '../../lib/blog';
 
 import KitForm from "../../components/kitform";
