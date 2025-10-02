@@ -5,7 +5,6 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <h3 className="text-xl font-bold font-sans">Make Better Content</h3>
-            <p className="text-primary-300 mt-1 font-sans">Reach millions of developers with short form video</p>
           </div>
           
           <div className="flex space-x-6">

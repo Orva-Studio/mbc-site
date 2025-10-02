@@ -15,19 +15,13 @@ const Navbar: React.FC = () => {
         <div className="flex space-x-6">
           <Link 
             to="/book" 
-            className={`text-primary-600 hover:text-primary-800 transition-colors font-sans ${path === '/book' ? 'font-bold' : ''}`}
+            className={`text-primary-600 hover:text-primary-800 transition-colors font-sans text-lg ${path === '/book' ? 'font-bold' : ''}`}
           >
             Book
           </Link>
           <Link 
-            to="/blog" 
-            className={`text-primary-600 hover:text-primary-800 transition-colors font-sans ${path === '/blog' || path.startsWith('/blog/') ? 'font-bold' : ''}`}
-          >
-            Blog
-          </Link>
-          <Link 
             to="/contact" 
-            className={`text-primary-600 hover:text-primary-800 transition-colors font-sans ${path === '/contact' ? 'font-bold' : ''}`}
+            className={`text-primary-600 hover:text-primary-800 transition-colors font-sans text-lg ${path === '/contact' ? 'font-bold' : ''}`}
           >
             Contact
           </Link>

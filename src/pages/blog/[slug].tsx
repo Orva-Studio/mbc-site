@@ -14,9 +14,6 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-primary-900 mb-4">Post Not Found</h1>
         <p className="text-primary-600 mb-8">The blog post you're looking for doesn't exist.</p>
-        <Link to="/blog" className="text-primary-600 hover:text-primary-800 transition-colors underline">
-          ← Back to blog
-        </Link>
       </div>
     );
   }
@@ -25,12 +22,8 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
     <div className="container mx-auto px-4 py-8">
       <title>{`${post.title} - Make Better Content`}</title>
       
-      <article className="my-8 max-w-2xl mx-auto">
+      <article className="my-8 max-w-4xl mx-auto">
         <header className="mb-8">
-          <Link to="/blog" className="text-primary-600 hover:text-primary-800 transition-colors underline mb-4 inline-block">
-            ← Back to blog
-          </Link>
-          
           <h1 className="text-4xl font-bold text-primary-900 mb-4">{post.title}</h1>
           
           <div className="flex items-center gap-4 text-primary-500 mb-6">
