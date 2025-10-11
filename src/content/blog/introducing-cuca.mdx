@@ -5,11 +5,14 @@ date: "2025-10-8"
 author: "Richard Oliver Bray"
 ---
 
-If you've ever tried recording a video using a DSLR or mirrorless camera and a mic connected to a computer, you've most likely experienced out-of-sync audio.
 
-This is because the video processing from the camera takes longer than recording audio, which causes the tracks to drift out of sync.
+![Close up of microphone](/images/blog/mic_post.png)
 
- There are several ways to address this.
+If you've ever tried recording a video using a **DSLR or mirrorless camera** and a mic connected to a computer separately. You've most likely experienced **out-of-sync audio**.
+
+This is because the video processing from the camera takes longer than recording audio.
+
+**There are several ways to address this.**
 
 ## 1. Manual editing
 
@@ -22,23 +25,29 @@ Annoyingly, there have been times I've forgotten to manually sync before publish
 
 This works because both the audio and video will be processed at the same time, so they will be in sync by default. To my knowledge, the Blue Yeti  (my mic), connects only via USB,  so you can't plug it directly to a camera, which usually uses a 3.5mm jack. 
 
-Also, unfortunately for me, my camera (Panasonic Lumix GX-9) doesn't have support for audio, so even if I did have the right mic, I don't have the right camera. 
+Also, unfortunately for me, my camera (Panasonic Lumix GX9) doesn't have audio support, so even if I had the right mic, I wouldn't be able to use it. 
 
 
-3. OBS + virtual mic
+## 3. OBS + virtual mic
 
-This method involves using OBS (or another tool) to set and delay an audio input so it matches up to a video. You can either just stick with OBS or setup a virtual mic which routes audio between apps. 
+This method involves using [OBS](https://obsproject.com/) (or another tool) to set and delay an audio input so it matches up to a video. You can either just stick with OBS or set up a virtual mic, which routes audio between apps. 
 
-So the audio input will be routed to OBS, which delays it, then routes it to the virtual mic, which sends it to any other programme for recording like Camtasia, ScreenFlow or QuickTime. Unless you use OBS to record, in that case you wouldn't need a virtual mic.
+So the audio input will be routed to OBS, which delays it, then routes it to the virtual mic, which sends it to any other programme for recording, like [Camtasia](https://www.techsmith.com/camtasia/), [ScreenFlow](https://www.telestream.net/screenflow/overview.htm) or QuickTime. Unless you use OBS to record, in that case, you wouldn't need a virtual mic.
 
-I've tried this process before, but it seemed to get out of sync when recording for a long time, which actually made it harder to fix manually than if I hadn't used this method in the first place.
+I've tried this process before, but it seemed to get out of sync when recording for a long time, which actually makes the audio harder to fix manually than if I hadn't used this method in the first place.
 
-But what if there was a way to just delay audio, without launching the whole OBS UI which might be the cause of the slowdown? This gave me an idea.
+But what if there was a way to just delay audio, without launching the whole OBS UI, which might be the cause of the slowdown? This gave me an idea.
 
-Introducing Cuca. A small MacOS utility for syncing your audio to video. Admittedly not the best name but if you follow me on Twitter/X you may have seen this picture of cucumelons. Tiny watermelons that taste like sour cucumbers.
+## My Idea
 
-My wife grows these in her greenhouse every Spring/Summer and they're taste great picked. I like the name Cuca so I thought it could work here, but it might change to Cuca Sync for SEO reasons.
+Introducing Cuca. A small macOS utility for syncing your audio to video. Admittedly, not the best name, but if you follow me on [Twitter/X](https://x.com/RichOBray), you may have seen this picture of cucamelons. Tiny watermelons that taste like sour cucumbers.
 
-Right now Cuca is a vibe coded Python script that I've been using without any issues for most of my recordings. It requires a virtual mic so VB-cable or Black hole which as Mac specific. The plan is to rewrite it in Swift to be a native MacOS app so it doesn't take up a terminal tab and might possibly be more performant, we'll see.
+![Close up of microphone](/images/blog/cuca.jpeg)
 
-If you want to mess about with it, you can grab the code here. Because the script isn't the final destination of Cuca I haven't put much effort into it, so feel free to contribute or file an issue. Really looking forward to what others think of it. 
+My wife grows these in her greenhouse every Spring/Summer, and they taste great picked. I like the name Cuca, so I thought it could work here, but it might change to Cuca Sync for SEO reasons.
+
+Right now, Cuca is a [vibe-coded Python](https://github.com/Orva-Studio/content-tools/blob/main/scripts/virtual_mic_delay.py) script that I've been using without any issues for most of my recordings. It requires a virtual mic such as [VB-cable](https://vb-audio.com/Cable/) or [Black Hole](https://existential.audio/blackhole/), which are both Mac-specific.
+
+The plan is to rewrite it in Swift to be a native macOS app so it doesn't take up a terminal tab and might possibly be more performant, we'll see. 
+
+**Watch this space to stay updated on my progress.**
