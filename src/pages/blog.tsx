@@ -1,5 +1,6 @@
 import { Link } from 'waku';
-import { getAllPosts, formatDate, type BlogPost } from '../lib/blog';
+import { getAllPosts, formatDate, calculateReadingTime, type BlogPost } from '../lib/blog';
+import { SEO, StructuredData } from '../components/seo';
 
 export default async function BlogPage() {
   const data = await getData();
@@ -7,7 +8,18 @@ export default async function BlogPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <title>{data.title}</title>
+      <SEO
+        title={data.title}
+        description={data.description}
+        url="/blog"
+        type="website"
+      />
+      <StructuredData
+        type="Blog"
+        title={data.headline}
+        description={data.description}
+        url="/blog"
+      />
 
       <article className="my-8 max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900">{data.headline}</h1>
@@ -31,10 +43,13 @@ export default async function BlogPage() {
 }
 
 function BlogPostCard({ post }: { post: BlogPost }) {
+  const readingTime = calculateReadingTime(post.content);
+  
   return (
     <article className="border border-primary-200 rounded-lg p-6 hover:shadow-md transition-shadow">
       <div className="mb-2">
         <time className="text-sm text-primary-500">{formatDate(post.date)}</time>
+        <span className="text-sm text-primary-500 ml-2">• {readingTime} min read</span>
       </div>
       
       <h2 className="text-2xl font-bold mb-3 text-primary-900">

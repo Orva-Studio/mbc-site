@@ -9,6 +9,7 @@ export interface BlogPost {
   date: string;
   author: string;
   content: string;
+  featuredImage?: string;
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
@@ -34,6 +35,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
             date: data.date || '',
             author: data.author || '',
             content,
+            featuredImage: data.featuredImage,
           } as BlogPost;
         })
     );
@@ -66,6 +68,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       date: data.date || '',
       author: data.author || '',
       content,
+      featuredImage: data.featuredImage,
     } as BlogPost;
   } catch (error) {
     console.error(`Error reading blog post ${slug}:`, error);
@@ -84,4 +87,23 @@ export function formatDate(dateString: string): string {
   } catch (_error) {
     return dateString;
   }
+}
+
+export async function getAdjacentPosts(currentSlug: string): Promise<{
+  previous: BlogPost | null;
+  next: BlogPost | null;
+}> {
+  const allPosts = await getAllPosts();
+  const currentIndex = allPosts.findIndex(post => post.slug === currentSlug);
+  
+  return {
+    previous: currentIndex > 0 ? (allPosts[currentIndex - 1] ?? null) : null,
+    next: currentIndex < allPosts.length - 1 ? (allPosts[currentIndex + 1] ?? null) : null,
+  };
+}
+
+export function calculateReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  return Math.ceil(words / wordsPerMinute);
 }
