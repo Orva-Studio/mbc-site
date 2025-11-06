@@ -15,8 +15,6 @@ import type { getConfig as File_Book_getConfig } from './pages/book';
 import type { getConfig as File_Contact_getConfig } from './pages/contact';
 // prettier-ignore
 import type { getConfig as File_Index_getConfig } from './pages/index';
-// prettier-ignore
-import type { getConfig as File_Track_getConfig } from './pages/track';
 
 // prettier-ignore
 type Page =
@@ -25,8 +23,7 @@ type Page =
 | ({ path: '/blog' } & GetConfigResponse<typeof File_Blog_getConfig>)
 | ({ path: '/book' } & GetConfigResponse<typeof File_Book_getConfig>)
 | ({ path: '/contact' } & GetConfigResponse<typeof File_Contact_getConfig>)
-| ({ path: '/' } & GetConfigResponse<typeof File_Index_getConfig>)
-| ({ path: '/track' } & GetConfigResponse<typeof File_Track_getConfig>);
+| ({ path: '/' } & GetConfigResponse<typeof File_Index_getConfig>);
 
 // prettier-ignore
 declare module 'waku/router' {
