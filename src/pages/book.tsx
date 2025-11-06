@@ -1,8 +1,8 @@
 import Blurb from "../components/blurb";
 import BookImage from "../components/bookimage";
+import Faq from "../components/faq";
 import Hero from "../components/hero";
 import KitForm from "../components/kitform";
-import Faq from "../components/faq";
 
 export default async function BookPage() {
 
