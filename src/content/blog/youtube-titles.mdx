@@ -1,0 +1,30 @@
+---
+title: "The AWS outage revealed my dumbest weekness"
+description: "I've relied on the vidIQ YouTube title score tool for so long I can't leave without it"
+date: "2026-01-01"
+author: "Richard Oliver Bray"
+---
+
+![Female US soldier saluting](/images/blog/chain.png)
+
+I know the [AWS outage](https://www.theguardian.com/technology/2025/oct/24/amazon-reveals-cause-of-aws-outage) was a while ago and there have been two, yet two, Cloudflare outages since. But I wrote this post when it was fresh and only decided to post it this month. 
+
+Anyway, when that **outage happened**, many were frustrated by apps like Canva, Supabase and Neon not working, but for me, it was vidIQ's title score tool. 
+
+For those unaware of the feature, you give the tool a YouTube video title, and it rates it from 0-100. Anything over 80 goes green, below goes amber, and there's even a red which my titles don't get.
+
+I'm not exactly sure how it calculates the score since the source code is private, but my assumption is it checks title length, keywords used, and curiosity or mystery in the title using some kind of llm sentiment analysis. Nevertheless, I am hooked on this feature.
+
+I use AI (GLM 4.7 + OpenCode) to generate titles and suggest the best one. If it's a title I like, I put it into vidIQ and wait for a score, which isn't instant, and only use the title if it gets a green score. Even if I think it's amazing if it doesn't get a green, I hit the generate button in vidIQ can suggest a better title. It's silly, I know since green titles don't guarantee a higher CTR or increase the view count, but at this point, I can't imagine publishing a video without putting the title through this tool. But when AWS went down, so did this tool.
+
+To this day I don't know what vidIQ uses AWS for. Maybe they were using an llm from bedrock, or using a lambda function to calculate scores. Either way after scripting, recording and editing the video, I was unable to publish it because, I didn't know if my title was green or amber. I frantically searched for another tool, but none were able to give satisfying scores or generate good alternatives. Some generated scores so quickly I wasn't convinced the calculation process was good or using any AI. Okay that's a lie, to be fair there was one took that I ended up using called x which did a decent job, but it wasn't half as good as vidIQ. Anyway eventually the tool did come back online, and when it did it was very different.
+
+It was much slower, the generated alternatives were no longer automatic, and gave 1 instead of 3 options. But worst of all, it stopped giving you a score for your entered title, only the suggested titles. I forgot to mention earlier that I've been using the free version of vidIQ the whole time and I would have to pay to get the feature I had before. No way I'm paying any amount of money just to get a score. So I've come up with a plan.
+
+The same way I vibe coded a prototype for Cuca, which I use for every video I record. I think I'll vibe code a prototype for a YouTube title scoring and generating suggestions tool. Because vidIQ's code isn't open source, the scores I generate will be different from what they get, and I don't think it will be as good, but it will be a start.
+
+If you know of any open source, free alternatives to vidIQ, or any others tools that generate scores for YouTube titles please let me know via [Twitter/X](https://x.com/RichOBray). I'll be open and say progress will be painfully slow.
+
+With a full time job and young kids I have very little free time. I may write a post about this specific struggle in the future. But for now you'll have to deal with my ramblings of tools I would like to make.
+
+Happy coding 👋 

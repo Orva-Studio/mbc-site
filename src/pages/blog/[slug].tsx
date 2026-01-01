@@ -89,7 +89,6 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
           )}
         </nav>
       </article>
-      <KitForm />
     </div>
   );
 }
