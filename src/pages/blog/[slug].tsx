@@ -1,8 +1,7 @@
 
 import { getPostBySlug, formatDate, getAllPosts, getAdjacentPosts, calculateReadingTime} from '../../lib/blog';
 
-import KitForm from "../../components/kitform";
-import { MDXRenderer } from '../../components/mdx-renderer';
+import { MDXRenderer} from '../../components/mdx-renderer';
 import { SEO, StructuredData } from '../../components/seo';
 
 export default async function BlogPostPage({ slug }: { slug: string }) {
@@ -25,7 +24,7 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
   return (
     <div className="container mx-auto px-4 py-8">
       <SEO
-        title={`${post.title} - Make Better Content`}
+        title={`${post.title} - Richard Oliver Bray`}
         description={post.description}
         url={`/blog/${post.slug}`}
         {...(post.featuredImage && { imageUrl: post.featuredImage })}

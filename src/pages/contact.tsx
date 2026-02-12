@@ -17,7 +17,7 @@ export default async function ContactPage() {
 
 const getData = async () => {
   const data = {
-    title: 'Contact - Make Better Content',
+    title: 'Contact - Richard Oliver Bray',
     headline: 'Contact',
     description: 'The minimal React framework',
   };

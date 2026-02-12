@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <h3 className="text-xl font-bold font-sans">Make Better Content</h3>
+            <h3 className="text-xl font-bold font-sans">Richard Oliver Bray</h3>
           </div>
           
           <div className="flex space-x-6">
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-primary-800 text-center text-primary-400 text-sm">
-          <p className="font-sans">© {new Date().getFullYear()} Make Better Content. All rights reserved.</p>
+          <p className="font-sans">© {new Date().getFullYear()} Richard Oliver Bray. All rights reserved.</p>
           <div className="mt-2 flex justify-center space-x-6">
           {/* <a href="#" className="hover:text-white transition-colors font-sans">Privacy Policy</a> */}
           {/* <a href="#" className="hover:text-white transition-colors font-sans">Terms of Service</a>*/}

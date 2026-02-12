@@ -21,10 +21,10 @@ export function SEO({
   modifiedDate,
   canonicalUrl,
 }: SEOProps) {
-  const siteUrl = 'https://makebettercontent.dev';
+  const siteUrl = 'https://robray.dev';
   const fullUrl = `${siteUrl}${url}`;
   const canonical = canonicalUrl || fullUrl;
-  const defaultImage = `${siteUrl}/images/book_cover.png`;
+  const defaultImage = `${siteUrl}/images/profile_pic.png`;
   const image = imageUrl || defaultImage;
 
   return (
@@ -40,7 +40,7 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:image:alt" content={title} />
-      <meta property="og:site_name" content="Make Better Content" />
+      <meta property="og:site_name" content="Richard Oliver Bray" />
       
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -87,9 +87,9 @@ export function StructuredData({
   publishedDate,
   modifiedDate,
 }: StructuredDataProps) {
-  const siteUrl = 'https://makebettercontent.dev';
+  const siteUrl = 'https://robray.dev';
   const fullUrl = `${siteUrl}${url}`;
-  const image = imageUrl || `${siteUrl}/images/book_cover.png`;
+  const image = imageUrl || `${siteUrl}/images/profile_pic.png`;
 
   let structuredData: any = {
     '@context': 'https://schema.org',
@@ -113,7 +113,7 @@ export function StructuredData({
       },
       publisher: {
         '@type': 'Organization',
-        name: 'Make Better Content',
+        name: 'Richard Oliver Bray',
         logo: {
           '@type': 'ImageObject',
           url: `${siteUrl}/images/favicon.png`,
