@@ -9,17 +9,17 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/">
           <div className="text-xl font-bold font-sans text-primary-800">
-            Make Better Content
+            Richard Oliver Bray
           </div>
         </Link>
         <div className="flex space-x-6">
-          <Link 
-            to="/book" 
-            className={`text-primary-600 hover:text-primary-800 transition-colors font-sans text-lg ${path === '/book' ? 'font-bold' : ''}`}
+          <Link
+            to="/blog"
+            className={`text-primary-600 hover:text-primary-800 transition-colors font-sans text-lg ${path === '/blog' ? 'font-bold' : ''}`}
           >
-            Book
+            Blog
           </Link>
-          <Link 
+          <Link
             to="/contact" 
             className={`text-primary-600 hover:text-primary-800 transition-colors font-sans text-lg ${path === '/contact' ? 'font-bold' : ''}`}
           >

@@ -20,13 +20,6 @@ export default async function HomePage() {
             
             This site exists to share my processes, thoughts to help others follow in my footsteps.
           </p>
-          <a 
-            href="/book" 
-            className="text-white font-bold py-3 px-8 rounded-md shadow-md transition-colors hover:opacity-90 cursor-pointer text-xl inline-block"
-            style={{ backgroundColor: 'var(--color-orange)' }}
-          >
-           I'm also writing a book
-          </a>
         </article>
         <article className="w-full md:w-auto">
           <img

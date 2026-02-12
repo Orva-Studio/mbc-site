@@ -64,7 +64,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
 
 const getData = async () => {
   const data = {
-    title: 'Blog - Make Better Content',
+    title: 'Blog - Richard Oliver Bray',
     headline: 'Blog',
     description: 'Tips, insights, and strategies for growing your developer audience',
   };
