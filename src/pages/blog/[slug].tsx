@@ -12,8 +12,8 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
   if (!post) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-primary-900 mb-4">Post Not Found</h1>
-        <p className="text-primary-600 mb-8">The blog post you're looking for doesn't exist.</p>
+        <h1 className="text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">Post Not Found</h1>
+        <p className="text-primary-600 dark:text-primary-300 mb-8">The blog post you're looking for doesn't exist.</p>
       </div>
     );
   }
@@ -44,16 +44,16 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
       
       <article className="my-8 max-w-4xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-primary-900 mb-4">{post.title}</h1>
+          <h1 className="text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">{post.title}</h1>
           
-          <div className="flex items-center gap-4 text-primary-500 mb-6">
+          <div className="flex items-center gap-4 text-primary-500 dark:text-primary-400 mb-6">
             <time>{formatDate(post.date)}</time>
             <span>by {post.author}</span>
             <span>•</span>
             <span>{readingTime} min read</span>
           </div>
           
-          <p className="text-xl text-primary-600">{post.description}</p>
+          <p className="text-xl text-primary-600 dark:text-primary-300">{post.description}</p>
         </header>
 
         <div className="prose prose-lg max-w-none mb-8">
@@ -66,9 +66,9 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
           {previous ? (
             <a 
               href={`/blog/${previous.slug}`}
-              className="flex flex-col items-start text-primary-600 hover:text-primary-800 transition-colors"
+              className="flex flex-col items-start text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-200 transition-colors"
             >
-              <span className="text-sm text-primary-500 mb-1">← Previous</span>
+              <span className="text-sm text-primary-500 dark:text-primary-400 mb-1">← Previous</span>
               <span className="font-medium">{previous.title}</span>
             </a>
           ) : (
@@ -78,9 +78,9 @@ export default async function BlogPostPage({ slug }: { slug: string }) {
           {next ? (
             <a 
               href={`/blog/${next.slug}`}
-              className="flex flex-col items-end text-primary-600 hover:text-primary-800 transition-colors"
+              className="flex flex-col items-end text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-200 transition-colors"
             >
-              <span className="text-sm text-primary-500 mb-1">Next →</span>
+              <span className="text-sm text-primary-500 dark:text-primary-400 mb-1">Next →</span>
               <span className="font-medium">{next.title}</span>
             </a>
           ) : (

@@ -22,8 +22,8 @@ export default async function BlogPage() {
       />
 
       <article className="my-8 max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900">{data.headline}</h1>
-        <p className="text-lg text-primary-600 mb-8">{data.description}</p>
+        <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900 dark:text-primary-100">{data.headline}</h1>
+        <p className="text-lg text-primary-600 dark:text-primary-300 mb-8">{data.description}</p>
 
         <div className="space-y-6">
         {posts.length > 0 ? (
@@ -32,8 +32,8 @@ export default async function BlogPage() {
           ))
         ) : (
           <div className="text-center py-12">
-            <p className="text-xl text-primary-500">Blog posts coming soon!</p>
-            <p className="text-primary-400 mt-2">Check back later for content creation tips and insights.</p>
+            <p className="text-xl text-primary-500 dark:text-primary-400">Blog posts coming soon!</p>
+            <p className="text-primary-400 dark:text-primary-500 mt-2">Check back later for content creation tips and insights.</p>
           </div>
         )}
         </div>
@@ -46,18 +46,18 @@ function BlogPostCard({ post }: { post: BlogPost }) {
   const readingTime = calculateReadingTime(post.content);
   
   return (
-    <article className="border border-primary-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+    <article className="border border-primary-200 dark:border-primary-700 rounded-lg p-6 hover:shadow-md transition-shadow">
       <div className="mb-2">
-        <time className="text-sm text-primary-500">{formatDate(post.date)}</time>
-        <span className="text-sm text-primary-500 ml-2">• {readingTime} min read</span>
+        <time className="text-sm text-primary-500 dark:text-primary-400">{formatDate(post.date)}</time>
+        <span className="text-sm text-primary-500 dark:text-primary-400 ml-2">• {readingTime} min read</span>
       </div>
       
-      <h2 className="text-2xl font-bold mb-3 text-primary-900">
-        <Link to={`/blog/${post.slug}`} className="hover:text-primary-700 transition-colors">
+      <h2 className="text-2xl font-bold mb-3 text-primary-900 dark:text-primary-100">
+        <Link to={`/blog/${post.slug}`} className="hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
           {post.title}
         </Link>
       </h2>
-      <p className="text-primary-600 mb-4">{post.description}</p>
+      <p className="text-primary-600 dark:text-primary-400 mb-4">{post.description}</p>
     </article>
   );
 }

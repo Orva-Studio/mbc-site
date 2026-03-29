@@ -43,14 +43,14 @@ const Faq: React.FC = () => {
           Frequently Asked Questions
         </h2>
         
-        <div className="max-w-3xl mx-auto divide-y divide-gray-200">
+        <div className="max-w-3xl mx-auto divide-y divide-gray-200 dark:divide-primary-700">
           {faqItems.map((item, index) => (
             <div key={index} className="py-5">
               <button
                 onClick={() => toggleAccordion(index)}
                 className="flex justify-between items-center w-full text-left focus:outline-none"
               >
-                <h3 className="text-lg font-medium text-gray-900">{item.question}</h3>
+                <h3 className="text-lg font-medium text-gray-900 dark:text-primary-100">{item.question}</h3>
                 <span className="ml-6 flex-shrink-0">
                   {openIndex === index ? (
                     <svg className="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +65,7 @@ const Faq: React.FC = () => {
               </button>
               {openIndex === index && (
                 <div className="mt-2 pr-12">
-                  <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: item.answer }} />
+                  <p className="text-gray-700 dark:text-primary-300" dangerouslySetInnerHTML={{ __html: item.answer }} />
                 </div>
               )}
             </div>

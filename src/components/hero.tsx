@@ -12,12 +12,12 @@ const Hero: React.FC = () => {
     <section className="pt-20 pb-12">
       <div className="container mx-auto px-4 text-center">
         <h1 
-          className="text-5xl md:text-8xl font-bold text-primary-900 mb-6 whitespace-pre-line" 
+          className="text-5xl md:text-8xl font-bold text-primary-900 dark:text-primary-100 mb-6 whitespace-pre-line" 
           style={{ fontFamily: "'Fugaz One', cursive" }}
         >
           {"Grow Your Developer\nAudience With Video"}
         </h1>
-        <p className="text-3xl text-primary-600 max-w-3xl mx-auto my-14 font-sans">
+        <p className="text-3xl text-primary-600 dark:text-primary-300 max-w-3xl mx-auto my-14 font-sans">
           Learn how to reach <strong className="txt-orange">MILLIONS of developers</strong> with short form video content
           that <strong>engages</strong> and <strong>converts</strong>.
         </p>
