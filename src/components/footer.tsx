@@ -1,6 +1,6 @@
 const Footer: React.FC = () => {
   return (
-    <footer className="py-8 text-white" style={{ backgroundColor: 'var(--color-dark-blue)' }}>
+    <footer className="py-8 text-white dark:text-primary-200" style={{ backgroundColor: 'var(--color-dark-blue)' }}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">

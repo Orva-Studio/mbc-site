@@ -16,9 +16,9 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         h1: ({ children }) => {
           const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
           return (
-            <h1 id={id} className="text-3xl mt-8 mb-4 text-primary-900 font-bold scroll-mt-20 group flex items-center">
+            <h1 id={id} className="text-3xl mt-8 mb-4 text-primary-900 dark:text-primary-100 font-bold scroll-mt-20 group flex items-center">
               <span>{children}</span>
-              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700">
+              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200">
                 #
               </a>
             </h1>
@@ -27,9 +27,9 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         h2: ({ children }) => {
           const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
           return (
-            <h2 id={id} className="text-2xl mt-8 mb-4 text-primary-900 font-semibold scroll-mt-20 group flex items-center">
+            <h2 id={id} className="text-2xl mt-8 mb-4 text-primary-900 dark:text-primary-100 font-semibold scroll-mt-20 group flex items-center">
               <span>{children}</span>
-              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700">
+              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200">
                 #
               </a>
             </h2>
@@ -38,9 +38,9 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         h3: ({ children }) => {
           const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
           return (
-            <h3 id={id} className="text-xl mt-6 mb-3 text-primary-900 font-semibold scroll-mt-20 group flex items-center">
+            <h3 id={id} className="text-xl mt-6 mb-3 text-primary-900 dark:text-primary-100 font-semibold scroll-mt-20 group flex items-center">
               <span>{children}</span>
-              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700">
+              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200">
                 #
               </a>
             </h3>
@@ -49,9 +49,9 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         h4: ({ children }) => {
           const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
           return (
-            <h4 id={id} className="text-lg mt-6 mb-3 text-primary-900 font-semibold scroll-mt-20 group flex items-center">
+            <h4 id={id} className="text-lg mt-6 mb-3 text-primary-900 dark:text-primary-100 font-semibold scroll-mt-20 group flex items-center">
               <span>{children}</span>
-              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700">
+              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200">
                 #
               </a>
             </h4>
@@ -60,9 +60,9 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         h5: ({ children }) => {
           const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
           return (
-            <h5 id={id} className="text-base mt-4 mb-2 text-primary-900 font-semibold scroll-mt-20 group flex items-center">
+            <h5 id={id} className="text-base mt-4 mb-2 text-primary-900 dark:text-primary-100 font-semibold scroll-mt-20 group flex items-center">
               <span>{children}</span>
-              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700">
+              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200">
                 #
               </a>
             </h5>
@@ -71,16 +71,16 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         h6: ({ children }) => {
           const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
           return (
-            <h6 id={id} className="text-sm mt-4 mb-2 text-primary-900 font-semibold scroll-mt-20 group flex items-center">
+            <h6 id={id} className="text-sm mt-4 mb-2 text-primary-900 dark:text-primary-100 font-semibold scroll-mt-20 group flex items-center">
               <span>{children}</span>
-              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700">
+              <a href={`#${id}`} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200">
                 #
               </a>
             </h6>
           );
         },
         p: ({ children }) => (
-          <p className="text-primary-700 mb-4 leading-loose">
+          <p className="text-primary-700 dark:text-primary-300 mb-4 leading-loose">
             {children}
           </p>
         ),
@@ -100,12 +100,12 @@ export function MDXRenderer({ content }: MDXRendererProps) {
           </ol>
         ),
         li: ({ children }) => (
-          <li className="text-primary-700">
+          <li className="text-primary-700 dark:text-primary-300">
             {children}
           </li>
         ),
         blockquote: ({ children }) => (
-          <blockquote className="border-l-4 border-primary-300 pl-4 italic text-primary-600 mb-4">
+          <blockquote className="border-l-4 border-primary-300 dark:border-primary-600 pl-4 italic text-primary-600 dark:text-primary-400 mb-4">
             {children}
           </blockquote>
         ),
@@ -113,7 +113,7 @@ export function MDXRenderer({ content }: MDXRendererProps) {
           const isInline = !className;
           if (isInline) {
             return (
-              <code className="bg-primary-100 text-primary-800 px-1 py-0.5 rounded text-sm font-mono">
+              <code className="bg-primary-100 dark:bg-primary-800 text-primary-800 dark:text-primary-200 px-1 py-0.5 rounded text-sm font-mono">
                 {children}
               </code>
             );
@@ -139,7 +139,7 @@ export function MDXRenderer({ content }: MDXRendererProps) {
         a: ({ href, children }) => (
           <a
             href={href}
-            className="text-blue-600 hover:text-blue-800 underline"
+            className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
             target={href?.startsWith('http') ? '_blank' : undefined}
             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
           >
@@ -147,22 +147,22 @@ export function MDXRenderer({ content }: MDXRendererProps) {
           </a>
         ),
         hr: () => (
-          <hr className="border-primary-200 my-8" />
+          <hr className="border-primary-200 dark:border-primary-700 my-8" />
         ),
         table: ({ children }) => (
           <div className="w-full overflow-x-auto mb-4">
-            <table className="w-full border-collapse border border-gray-300">
+            <table className="w-full border-collapse border border-gray-300 dark:border-primary-600">
               {children}
             </table>
           </div>
         ),
         th: ({ children }) => (
-          <th className="border border-gray-300 bg-gray-100 px-4 py-2 text-left font-semibold">
+          <th className="border border-gray-300 dark:border-primary-600 bg-gray-100 dark:bg-primary-800 px-4 py-2 text-left font-semibold">
             {children}
           </th>
         ),
         td: ({ children }) => (
-          <td className="border border-gray-300 px-4 py-2">
+          <td className="border border-gray-300 dark:border-primary-600 px-4 py-2">
             {children}
           </td>
         ),

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Fugaz+One&display=swap') layer(base);
 @import 'tailwindcss';
 
+@config '../tailwind.config.js';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --color-cream: #fafaf2;
   --color-orange: #dd9255;
@@ -14,6 +18,15 @@
 body {
   background-color: var(--color-cream);
   color: var(--color-dark-blue);
+}
+
+html.dark body {
+  background-color: #1a1a2e;
+  color: #e2e8f0;
+}
+
+html.dark .txt-orange {
+  color: #e8a76e;
 }
 
 .font-fugaz {

@@ -2,11 +2,11 @@ import React from 'react';
 
 const Blurb: React.FC = () => {
   return (
-    <section className="pb-16 bg-primary-50">
+    <section className="pb-16 bg-primary-50 dark:bg-primary-900/30">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto prose prose-primary">
           <h2 
-            className="text-3xl font-bold font-sans text-primary-900 text-center mb-8"
+            className="text-3xl font-bold font-sans text-primary-900 dark:text-primary-100 text-center mb-8"
             style={{ fontFamily: "'Fugaz One', cursive" }}
           >
             The Secrets to Amazing Developer Content
@@ -60,8 +60,8 @@ const Blurb: React.FC = () => {
   Am I the best creator out there? Far from it. But I know a few things about making short videos that developers actually want to watch, and I'm sharing <strong>everything I've learned completely FREE</strong>
             </p>
           </div>
-          <h3 className="text-2xl font-bold font-sans text-primary-800 mt-8 mb-4" style={{'fontFamily':"'Fugaz One', cursive"}}>What You'll Learn</h3>
-          <ul className="text-primary-700 text-lg mb-6 font-sans space-y-2">
+          <h3 className="text-2xl font-bold font-sans text-primary-800 dark:text-primary-200 mt-8 mb-4" style={{'fontFamily':"'Fugaz One', cursive"}}>What You'll Learn</h3>
+          <ul className="text-primary-700 dark:text-primary-300 text-lg mb-6 font-sans space-y-2">
             <li className="flex items-start">
               <span className="text-orange mr-2 mt-1">•</span>
               <span>💭 Coming up with <strong>video ideas</strong> that developers actually want to watch</span>
