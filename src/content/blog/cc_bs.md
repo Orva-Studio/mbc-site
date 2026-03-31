@@ -1,3 +1,4 @@
+<!-- TODO: This file is here temporarily and may need to be moved to a different directory -->
 # Setting Up Claude Code Telemetry with Better Stack
 
 ## Overview

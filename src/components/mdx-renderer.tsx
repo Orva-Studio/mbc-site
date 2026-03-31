@@ -85,7 +85,7 @@ export function MDXRenderer({ content }: MDXRendererProps) {
           </p>
         ),
         strong: ({ children }) => (
-          <strong className="font-bold text-primary-900">
+          <strong className="font-bold text-primary-900 dark:text-primary-100">
             {children}
           </strong>
         ),
