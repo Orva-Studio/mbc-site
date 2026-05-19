@@ -24,6 +24,7 @@ export default async function RootElement({ children }: { children: React.ReactN
         <meta property="twitter:description" content="Personal blog of Richard Oliver Bray — developer educator, content creator, and full stack developer sharing processes and thoughts on educating developers through video." />
         <meta property="twitter:image" content="https://robray.dev/images/profile_pic.png" />
         
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()` }} />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

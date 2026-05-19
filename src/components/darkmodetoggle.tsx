@@ -10,10 +10,21 @@ function DarkModeToggle() {
   useEffect(() => {
     setMounted(true);
     const stored = localStorage.getItem('theme');
-    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (stored === 'dark' || (!stored && prefersDark.matches)) {
       setDark(true);
       document.documentElement.classList.add('dark');
     }
+
+    function onSystemChange(e: MediaQueryListEvent) {
+      if (localStorage.getItem('theme')) return;
+      setDark(e.matches);
+      document.documentElement.classList.toggle('dark', e.matches);
+    }
+
+    prefersDark.addEventListener('change', onSystemChange);
+    return () => prefersDark.removeEventListener('change', onSystemChange);
   }, []);
 
   function toggle() {

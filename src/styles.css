@@ -32,6 +32,10 @@ html.dark .txt-orange {
   color: #e8a76e;
 }
 
+html.dark strong {
+  color: #f1f5f9;
+}
+
 .font-fugaz {
   font-family: 'Fugaz One', cursive;
 }
