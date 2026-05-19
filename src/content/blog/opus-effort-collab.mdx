@@ -1,0 +1,34 @@
+---
+title: "Opus effort? Better +Collab beats than high effort every time"
+description: "Collaborating with Claude to fix an issue is better than changing the effort level"
+date: "2026-05-19"
+author: "Richard Oliver Bray"
+---
+
+A while ago I was working on a Mac app called **Vinyl Mode** which plays songs with vinyl sound effects, crackle, pin scratches, and so on. It works by hijacking what's playing on the **MacOS media player** to add the effects on top of it. Anyways, while working on it, I had a bug where it wasn't picking up the music I was playing from Spotify even though it existed in the player.
+
+At the time I was using **Claude Sonnet 4.6** with medium effort in Claude Code and I thought changing the effort level would help find the fix faster. So a few minutes later, I changed to high effort and the model was still going around in circles. 'Okay time to bring out the big guns', I thought. Opus 4.6 medium effort, still struggled. Opus high effort, no luck. I was genuinely shocked. This was all in the same context window by the way which should have helped.
+
+At this point my prompts were along the lines of; _'there is still a bug please fix it'_, or, _'your fix didn't work, try again'_. Which, of course wasn't working with, arguably, the best model in the world, in the highest effort, using the best harness. So I needed to try something else.
+
+I went down to Opus low effort, I will explain why later on, and said something along the lines of, 'you've been going around in circles trying to fix this issue, what have you tried that hasn't worked? What new approaches should you try?'. Again this isn't exactly what I said, but it's close enough. Anyway, after that, Opus went to work, took a completely different route and amazingly, it came up with a solution. This was all still in the same context window.
+
+Why did this approach work and why did the other one not work? How can you adopt this approach to save more tokens when debugging? Let me explain to the best of my ability.
+
+So, when a model runs in high effort this is essentially it **reasoning with itself**, going through its own hypotheses over and over again. Like a single developer stuck on an issue and trying the same approach without rubber ducking or going out for a walk to clear their mind.
+
+A higher effort will just make it think harder, it's best to break its chain of thought. This can be done by reasoning through the model's reasoning, or even looking through the code it's trying to fix and attempting to steer it in the right direction, or even a different direction. This could be as simple as the prompt I gave it earlier to stop going in circles, or asking it to try and explain the issue to you and try to debug.
+
+This is known as **conversational debugging**, and helps to break the model's first hypothesis and gets it to try a different approach. This is something the model can't do on its own, well, unless it's talking to another version of itself with a different system prompt or a completely different model, but that's a topic for a different article.
+
+Unfortunately I've lost interest in Vinyl Mode at the moment so I'm not sure when or if I will ever finish it. But the lessons I've learnt from using AI have been applied to many other projects and I will boil them down to three points.
+
+One, I **only ever use Opus low effort with superpowers**. I've tried many Claude Code project management techniques from GStack to Beads to OpenSpec. Personally I've found superpowers to work the best. I find it does high effort reasoning on low effort specifically when it comes to planning. At the time of writing I prefer it to using Claude Code's built in planning mode. It has skills for brainstorming that always ask questions I haven't thought of and gives great approaches to tackle a problem. I use it to plan every medium to large feature, read through the plan, then get it to run the implementation. It's great, I highly recommend it.
+
+Two, **stop the model if it's taking too long**. This is a tip I got from Peter Steinberger the creator of OpenClaw. He claims if you've been using a specific model and harness for long enough you'll know how long it takes to complete a task, and if you feel it's taking longer than it needs to you can ask it why. The /btw command in Claude Code is really helpful for this. But usually if it's taking longer for me it's most likely struggling to do something, or a network connection issue. If it's the former, I just tell it to stop and try a different angle. Basically the main point of this article.
+
+Three, **keep context percentage as low as possible**. I've found models work better under 65-70 percent context usage but also they are much cheaper. I use the Claude Pro subscription and I noticed the usage limits ramp up for long conversations, also, it's just a lot of information for a model to go through in a session. Yes I know Sonnet and Opus have a 1 million token context window option which I never use on purpose. But models have been best trained on lower context, and it's difficult to explain but they tend to respond faster with better responses in fresh sessions. Now I know I mentioned I was in the same context window earlier in the post when debugging which I believe contributed to it taking longer to fix the bug. The second I noticed it was taking a long time I should have stopped the model and questioned its method instead of changing effort level. Every new bug fix and new feature starts on a new session, and compaction is always a no no. If you're interested I might write a deeper blog post on this specific point. But I'm rambling now so let's wrap this up.
+
+I would say I'm very much hooked on AI assisted coding, it's helped me to build products that I would never have had the time to build with a demanding job and young kids. If I get the time I will share my findings here to help others get better at coding with AI.
+
+Until then happy coding 👋
