@@ -13,6 +13,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <div className="font-sans">
       <meta name="description" content={data.description} />
       <link rel="icon" type="image/png" href={data.icon} />
+      <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM-friendly site content" />
       <Navbar />
       <main className="m-6 flex *:min-h-64 *:min-w-64 lg:m-0 lg:min-h-svh lg:justify-center">
         {children}

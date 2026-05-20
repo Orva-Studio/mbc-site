@@ -9,7 +9,7 @@ export default {
     // Handle static assets first
     if (url.pathname.startsWith('/assets/') || 
         url.pathname.startsWith('/public/') ||
-        url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
+        url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|txt|md)$/)) {
       return env.ASSETS.fetch(request);
     }
     
