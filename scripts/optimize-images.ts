@@ -1,26 +1,26 @@
 const imageDir = "public/images/blog";
 const outputDir = "public/images-optimized/blog";
-const placeholderDir = "public/images-optimized/placeholders/blog";
 const glob = new Bun.Glob("*.{png,jpg,jpeg}");
 
-await Bun.$`mkdir -p ${outputDir} ${placeholderDir}`;
+await Bun.$`mkdir -p ${outputDir}`;
+
+const placeholders: Record<string, string> = {};
 
 for await (const file of glob.scan({ cwd: imageDir })) {
   const input = `${imageDir}/${file}`;
   const webpName = file.replace(/\.(png|jpg|jpeg)$/i, ".webp");
 
-  // Optimized image
   await new Bun.Image(input)
     .resize(1200, undefined, { fit: "inside", withoutEnlargement: true })
     .webp({ quality: 80 })
     .write(`${outputDir}/${webpName}`);
 
-  // Tiny placeholder you can open and see
-  await new Bun.Image(input)
-    .resize(32)
-    .webp({ quality: 20 })
-    .write(`${placeholderDir}/${webpName}`);
-
-  const size = Bun.file(`${placeholderDir}/${webpName}`).size;
-  console.log(`  ${file.padEnd(40)} placeholder: ${size} bytes`);
+  const placeholder = await new Bun.Image(input).placeholder();
+  placeholders[file] = placeholder;
+  console.log(`  ${file.padEnd(40)} placeholder: ${placeholder.length} bytes`);
 }
+
+await Bun.write(
+  "src/image-placeholders.ts",
+  `export const placeholders: Record<string, string> = ${JSON.stringify(placeholders, null, 2)};\n`,
+);
