@@ -2,6 +2,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
+import { placeholders } from '../image-placeholders';
 
 interface MDXRendererProps {
   content: string;
@@ -129,13 +130,24 @@ export function MDXRenderer({ content }: MDXRendererProps) {
             {children}
           </pre>
         ),
-        img: ({ src, alt }) => (
-          <img 
-            src={src} 
-            alt={alt} 
-            className="w-full mb-8 rounded-lg" 
-          />
-        ),
+       img: ({ src, alt }) => {
+          const filename = src?.split('/').pop() ?? '';
+          const placeholder = placeholders[filename];
+          return (
+            <img
+              src={src}
+              alt={alt}
+              className="w-full mb-8 rounded-lg"
+              style={
+                placeholder ? 
+                  { 
+                    backgroundImage: `url(${placeholder})`, 
+                    backgroundSize: 'cover' 
+                  } : undefined
+              }
+            />
+          );
+  },
         a: ({ href, children }) => (
           <a
             href={href}
