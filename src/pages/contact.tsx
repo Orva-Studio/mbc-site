@@ -14,6 +14,7 @@ export default async function ContactPage() {
           <a href="https://x.com/RichOBray" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-300 hover:text-orange-500 dark:hover:text-orange-400 underline">Twitter/X</a>
           <a href="https://www.youtube.com/@richardbray" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-300 hover:text-orange-500 dark:hover:text-orange-400 underline">YouTube</a>
           <a href="https://www.linkedin.com/in/richbray/" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-300 hover:text-orange-500 dark:hover:text-orange-400 underline">LinkedIn</a>
+          <a href="https://github.com/RichardBray" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-300 hover:text-orange-500 dark:hover:text-orange-400 underline">GitHub</a>
         </div>
       </article>
     </div>
