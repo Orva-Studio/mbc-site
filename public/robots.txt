@@ -1,2 +1,3 @@
-User-agent: *
-Disallow: /RSC/
+User-Agent: *
+Content-Signal: search=yes, ai-train=yes
+Allow: /
