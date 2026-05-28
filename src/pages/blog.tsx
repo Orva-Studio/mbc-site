@@ -66,7 +66,7 @@ const getData = async () => {
   const data = {
     title: 'Blog - Richard Oliver Bray',
     headline: 'Blog',
-    description: 'Tips, insights, and strategies for growing your developer audience',
+    description: 'Thoughts on AI-assisted coding, developer tools, and content creation',
   };
 
   return data;

@@ -10,6 +10,11 @@ export default async function ContactPage() {
         <h1 className="text-4xl font-bold tracking-tight mb-8 text-primary-900 dark:text-primary-100">{data.headline}</h1>
         <p className="text-primary-600 dark:text-primary-300 mb-8">If you're looking for any kind of help with growing your audience through video, don't hesitate to reach out.</p>
         <p className="text-primary-600 dark:text-primary-300 mb-8">rich.bray[at]orva.studio</p>
+        <div className="flex gap-6">
+          <a href="https://x.com/RichOBray" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-300 hover:text-orange-500 dark:hover:text-orange-400 underline">Twitter/X</a>
+          <a href="https://www.youtube.com/@richardbray" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-300 hover:text-orange-500 dark:hover:text-orange-400 underline">YouTube</a>
+          <a href="https://www.linkedin.com/in/richbray/" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-300 hover:text-orange-500 dark:hover:text-orange-400 underline">LinkedIn</a>
+        </div>
       </article>
     </div>
   );
