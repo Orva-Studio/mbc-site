@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "waku dev",
-    "build": "waku build --with-cloudflare && bun run scripts/generate-llms-txt.ts",
+    "build": "waku build --with-cloudflare && bun run scripts/generate-llms-txt.ts && find dist/assets -name '.DS_Store' -delete",
     "start": "waku start"
   },
   "dependencies": {
