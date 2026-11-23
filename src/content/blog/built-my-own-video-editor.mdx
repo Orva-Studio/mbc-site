@@ -31,7 +31,9 @@ But when it comes to getting AI to cut silences or retakes automatically, Camtas
 
 So I thought, why not get Claude to build me an editor?
 
-I'll be open and say it was difficult at first. I didn't get what I wanted straight away. But after a lot of trial and error I got there, and the editor I use now is, in my opinion, **better than Camtasia for the way I edit**.
+I'll be open and say it was difficult at first. I didn't get what I wanted straight away. But after a lot of trial and error I got there. I called it **Beacon**, and it's now, in my opinion, **better than Camtasia for the way I edit**.
+
+![Beacon's editor, with the AI panel on the left, a motion graphic in the preview, and caption, B-roll and motion graphic clips on the timeline](/images/blog/beacon-editor.jpg)
 
 It's a web app wrapped in a native Mac app using [Electrobun](https://electrobun.dev/). It's like Electron, but it uses the browser that already comes with the Mac, which means WebKit rather than Chromium. The downside is that I couldn't use [HyperFrames](https://hyperframes.heygen.com/), because that's built on Chromium. So I took the best bits of it, mainly the components, and **got them working on WebKit**. That means my editor can create motion graphics right inside the timeline.
 
@@ -46,11 +48,17 @@ The whole edit happens through Claude now:
 1. **Rough cut.** Claude goes through the audio and removes the bad takes, silences, and everything else that shouldn't be there.
 2. **The edit.** Claude adds animations, motion graphics, and B-roll. The editor is also connected to my [Replicate](https://replicate.com/) account, so it can generate B-roll with [Seedance](https://replicate.com/bytedance).
 
+![A generated B-roll clip of hands on a laptop trackpad selected in Beacon, with the prompt and Seedance model shown in the side panel](/images/blog/beacon-broll.jpg)
+
 ## Down the AI video rabbit hole
 
 Building all this sent me down a rabbit hole of AI video models, and I've learnt a lot about **making AI video that actually looks good**.
 
-It started because I wanted a tool in the editor that could create different camera angles. That tool still exists, but getting there wasn't straightforward. Seedance is probably the best model around, but it's **really expensive**, and the version I use on Replicate tops out at 720p.
+It started because I wanted a tool in the editor that could create different camera angles.
+
+![The same take shown twice: the original wide shot on the left and a generated close-up angle on the right](/images/blog/beacon-camera-angle.jpg)
+
+That tool still exists, but getting there wasn't straightforward. Seedance is probably the best model around, but it's **really expensive**.
 
 So I found ways around it. ByteDance has a [video upscaler](https://replicate.com/bytedance/video-upscaler) that takes video from 480p up to 1080p or even 4K, and I've been using it a lot. With the right prompt and a bit of massaging, cheaper models like [Wan 3.0](https://replicate.com/alibaba/wan-3) can produce very good videos too. And Seedance has recently released a Flash model, which is cheaper again.
 
