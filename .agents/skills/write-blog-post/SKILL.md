@@ -67,7 +67,27 @@ Generate it with the bundled script, which uses `OPENAI_API_KEY` and falls back 
 - Look at the generated image before using it. Regenerate with a revised prompt if it has text artefacts, mangled hands, or looks obviously synthetic.
 - Optional extra images inside the post (a film still, a game screenshot) may be found online when they really help. Prefer official press kits or Wikimedia Commons, download into `public/images/blog/`, and tell the user the source so they can judge the rights.
 
-## 5. Check and hand over
+## 5. X Article version (when asked)
+
+Rewrite the finished post as an X Article in `drafts/x/<slug>.md`. It's the same argument and voice, tuned to how X's own guidance and the creator data say Articles get read:
+
+- **The first ~280 characters show in the timeline card,** so the opening two sentences carry the hook. Lead with the person or situation, then the tension.
+- **Cut 20-30%.** One idea per paragraph, mostly one or two sentences. Drop asides that only work on the blog.
+- **A subheading every 200-400 words**, and bold the key insight in almost every section.
+- **@mention real people and companies** instead of linking them (e.g. `@CalebPeffer`, `@firecrawl`). Keep other outbound links to a minimum, because X deprioritises them.
+- **Start with a cross-post line** directly under the title, in italics: `_Also posted on my blog: [robray.dev/blog/<slug>](https://robray.dev/blog/<slug>)_`.
+- **End with a question** that invites replies.
+- **Cover image:** reuse the blog hero (`public/images/blog/<slug>.jpg`). Its banner ratio works as an X cover.
+
+X's editor ignores pasted markdown, so render a copy-paste page:
+
+```bash
+bun .agents/skills/write-blog-post/scripts/x-article-preview.ts drafts/x/<slug>.md
+```
+
+Open the resulting `.html`, select all, copy, and paste into the Articles editor on x.com (desktop only, Premium required).
+
+## 6. Check and hand over
 
 - Run `bun dev` and open `http://localhost:3000/blog/<slug>` to confirm the post renders, if the dev server can be started.
 - Give the user the title, slug, word count, the image prompt used, and any transcript passages you cut or interpreted. Don't commit until they've reviewed it.
