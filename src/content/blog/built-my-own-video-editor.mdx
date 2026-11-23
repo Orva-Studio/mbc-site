@@ -15,7 +15,7 @@ You may be wondering why anyone would build a video editor when there are so man
 
 For years I edited everything in [Camtasia](https://www.techsmith.com/camtasia/). It has its downfalls, but the thing I really like about it is that **the controls are intuitive**, and it does a lot out of the box that many video editors and screen recorders don't.
 
-You can record your screen and whatever camera you have at the same time. I use an Elgato capture device with a Panasonic Lumix GX9, and it picks up system audio too. You don't have to set anything up, it just works.
+You can record your screen and whatever camera you have at the same time. I use an [Elgato](https://www.elgato.com/) capture device with a [Panasonic Lumix GX9](https://shop.panasonic.com/products/gx9-mirrorless-camera-12-60mm-f3-5-5-6-lens), and it picks up system audio too. You don't have to set anything up, it just works.
 
 The editing is good as well. My favourite feature is **extending a clip**. If I've recorded my screen and want it to last longer, I hold a key, drag the end of the clip, and it fills the gap with a frozen frame. I like the stitching, the way the animations work, and the fact that there's **no fixed audio or video track**. You can put anything on any layer and you never feel restricted.
 
@@ -29,17 +29,17 @@ But when it comes to getting AI to cut silences or retakes automatically, Camtas
 
 ## So I built my own with Claude
 
-So I thought, why not get Claude to build me an editor?
+So I thought, why not get Claude to build me an editor? It wouldn't be the first video tool I've built for myself. Before this there was [Cuca](/blog/introducing-cuca), for syncing my audio and video.
 
 I'll be open and say it was difficult at first. I didn't get what I wanted straight away. But after a lot of trial and error I got there. I called it **Beacon**, and it's now, in my opinion, **better than Camtasia for the way I edit**.
 
 ![Beacon's editor, with the AI panel on the left, a motion graphic in the preview, and caption, B-roll and motion graphic clips on the timeline](/images/blog/beacon-editor.jpg)
 
-It's a web app wrapped in a native Mac app using [Electrobun](https://electrobun.dev/). It's like Electron, but it uses the browser that already comes with the Mac, which means WebKit rather than Chromium. The downside is that I couldn't use [HyperFrames](https://hyperframes.heygen.com/), because that's built on Chromium. So I took the best bits of it, mainly the components, and **got them working on WebKit**. That means my editor can create motion graphics right inside the timeline.
+It's a web app wrapped in a native Mac app using [Electrobun](https://electrobun.dev/). It's like [Electron](https://www.electronjs.org/), but it uses the browser that already comes with the Mac, which means WebKit rather than Chromium. The downside is that I couldn't use [HyperFrames](https://hyperframes.heygen.com/), because that's built on Chromium. So I took the best bits of it, mainly the components, and **got them working on WebKit**. That means my editor can create motion graphics right inside the timeline.
 
 ## Things my editor does that Camtasia doesn't
 
-The big one is that the editor has its own **MCP server**. At the time of writing, Camtasia doesn't have one.
+The big one is that the editor has its own **[MCP](https://modelcontextprotocol.io/) server**. At the time of writing, Camtasia doesn't have one. I know I've said [MCP servers aren't great for coding](/blog/dont-mcp), but this isn't coding.
 
 That opens up a lot. Camtasia doesn't help you find music or sound effects. You can add them, but you do it all manually. My editor is connected to the [Epidemic Sound MCP](https://www.epidemicsound.com/tools/mcp/), so I just tell Claude to add music and sound effects, and it does it flawlessly.
 
@@ -64,7 +64,7 @@ All of this to say, I'm heading towards **making videos completely with AI**. Wi
 
 For some of them I'll use my own voice rather than an AI one, because in my experience AI voices still sound a bit robotic. I've got a whole process for it. I create a character, do some test recordings myself, and use those recordings to give the character its expressions when generating the video. Then I run my voice through [Fish Audio](https://fish.audio/), another cheap model, to turn it into whatever matches the character's persona: male, female, American, and so on.
 
-Now, I could get Claude to do the whole thing, generation and edit included. But what I've found with images and video (I haven't tried music, but I'm sure it's the same) is that **AI gets about 90% of the way there**, and the last 10% needs a human.
+Now, I could get Claude to do the whole thing, generation and edit included. But what I've found with images and video (I haven't tried music, but I'm sure it's the same) is that **AI gets about 90% of the way there**, and the last 10% needs a human. It's the same thing I argued in [AI Remixes. Humans Push Things Forward](/blog/ai-remixes-humans-push-forward).
 
 That's the beauty of having an AI editor with an MCP backend. Claude uses the editor's primitives to add text, motion graphics, or whatever else, and because it's all real editor content, **I can open the editor and tweak things by hand** to push it to 100%. Those are the human edits that make a video actually look good.
 
