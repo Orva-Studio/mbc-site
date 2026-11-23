@@ -11,7 +11,7 @@ const output = input.replace(/\.md$/, '.html');
 await Bun.write(
   output,
   `<!doctype html><meta charset="utf-8"><title>X Article draft</title>
-<style>body{max-width:640px;margin:40px auto;padding:0 16px;font:18px/1.6 system-ui;color:#0f1419;background:#fff}</style>
+<style>body{max-width:640px;margin:40px auto;padding:0 16px;font:18px/1.6 system-ui;color:#0f1419;background:#fff}img{max-width:100%;height:auto;display:block;margin:24px 0}</style>
 ${body}`,
 );
 console.log(output);
